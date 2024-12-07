@@ -9,9 +9,17 @@ from langchain_google_genai import GoogleGenerativeAI
 # Specify the Tesseract executable path (if not in PATH)
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Adjust based on your system
 
-# Set API Key for Google Generative AI
-# f =  app/key.txt
-GOOGLE_API_KEY = app/key.txt
+# Get the current directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Load API key from a relative path
+key_file_path = os.path.join(BASE_DIR, "app", "key.txt")
+with open(key_file_path, "r") as f:
+    GOOGLE_API_KEY = f.read().strip()
+    
+# # Set API Key for Google Generative AI
+# # f =  app/key.txt
+# GOOGLE_API_KEY = app/key.txt
 
 # Initialize Google Generative AI
 llm = GoogleGenerativeAI(model="gemini-1.5-pro", api_key=GOOGLE_API_KEY)
