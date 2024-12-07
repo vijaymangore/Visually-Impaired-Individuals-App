@@ -7,10 +7,10 @@ import google.generativeai as genai
 from langchain_google_genai import GoogleGenerativeAI
 
 # Specify the Tesseract executable path (if not in PATH)
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Adjust based on your system
+# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Adjust based on your system
 
 # Get the current directory
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 secrete_key = open('key.txt')
 key = secrete_key.read()
