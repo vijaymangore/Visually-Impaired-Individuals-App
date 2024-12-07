@@ -12,10 +12,14 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 # Get the current directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Load API key from a relative path
-key_file_path = os.path.join(BASE_DIR, "app", "key.txt")
-with open(key_file_path, "r") as f:
-    GOOGLE_API_KEY = f.read().strip()
+secrete_key = open('key.txt')
+key = secrete_key.read()
+ai.configure(api_key=key)
+
+# # Load API key from a relative path
+# key_file_path = os.path.join(BASE_DIR, "app", "key.txt")
+# with open(key_file_path, "r") as f:
+#     GOOGLE_API_KEY = f.read().strip()
     
 # # Set API Key for Google Generative AI
 # # f =  app/key.txt
